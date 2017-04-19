@@ -1,0 +1,2 @@
+The purpose of this app is to remove the hassle of coins while playing polpular board game like poker . 
+We can do all the give and take of coins from this app from our own personal devices , all we need now is a mobile phone and cards for playing poker. 
