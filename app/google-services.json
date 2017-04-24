@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "201331023875",
+    "firebase_url": "https://pokerpaisa-b61a9.firebaseio.com",
+    "project_id": "pokerpaisa-b61a9",
+    "storage_bucket": "pokerpaisa-b61a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201331023875:android:616051a20deef98a",
+        "android_client_info": {
+          "package_name": "com.example.vaibhavchellani.pokerpaisa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "201331023875-kicd4rj4philppek2upct1661cefm0tj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vaibhavchellani.pokerpaisa",
+            "certificate_hash": "0b2c66bae6eefb352a432a084a9bc88358a568ae"
+          }
+        },
+        {
+          "client_id": "201331023875-3evafmp7j6ne5veppd22qphibpm7biou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl6qp-WJByVN4eSOg91EE7XCRMRVIcGJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "201331023875-3evafmp7j6ne5veppd22qphibpm7biou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
