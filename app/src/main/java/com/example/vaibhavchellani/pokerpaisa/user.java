@@ -5,4 +5,22 @@ package com.example.vaibhavchellani.pokerpaisa;
  */
 
 public class user {
+    String userName;
+    Integer userCoins;
+
+    public user() {
+    }
+
+    public user(String userName, Integer userCoins) {
+        this.userName = userName;
+        this.userCoins = userCoins;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public Integer getUserCoins() {
+        return userCoins;
+    }
 }
