@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringDef;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -68,9 +71,18 @@ public class createTable extends AppCompatActivity {
                 mdatabase.child(tablekey).child(userkey).setValue(muser);
                 mdatabase.child(tablekey).child("inital-coins").setValue(userchips);
                 mdatabase.child(tablekey).child("pot").setValue(0);
+
+
+                ArrayList<String> newmessage=new ArrayList<String>();
+                newmessage.add("WELCOME EVERYONE");
+                newmessage.add(name+" has joined the table ");
+                messages newmesage=new messages(newmessage);
+                mdatabase.child(tablekey).child("messages").setValue(newmesage);
+
                 Toast.makeText(createTable.this, "Successfully created Table "+name, Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(getApplicationContext(),MainActivity.class);
                 editor.putString("table_link",tablekey);
+                editor.putString("user_key",userkey);
                 editor.apply();
                 startActivity(i);
 
