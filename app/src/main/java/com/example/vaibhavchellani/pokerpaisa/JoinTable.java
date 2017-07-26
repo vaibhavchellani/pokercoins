@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -67,7 +69,7 @@ public class JoinTable extends AppCompatActivity {
                             String tablekey = mdatabse.child("table").push().getKey();
                             String userkey = mdatabse.child("table").child("user").push().getKey();
                             try{
-                                userCoins=dataSnapshot.child(link).child("initial-coins").getValue(Integer.class);
+                                userCoins=dataSnapshot.child(link).child("inital-coins").getValue(Integer.class);
                                 //to find value of intial coins
                             }
                                 catch (Throwable e){
@@ -75,9 +77,19 @@ public class JoinTable extends AppCompatActivity {
                                 }
                             user muser=new user(name,userCoins);
                             mdatabse.child(link).child(userkey).setValue(muser);
+
+                            //todo this creates replaces all exisitng messages
+                            //error
+                            ArrayList<String> newmessage=new ArrayList<String>();
+                            newmessage.add(name+" has joined the table ");
+                            messages newmesage=new messages(newmessage);
+                            mdatabse.child(link).child("messages").setValue(newmesage);
+
+
                             Toast.makeText(JoinTable.this, " Succesfully joined Table "+name, Toast.LENGTH_SHORT).show();
                             Intent i=new Intent(getApplicationContext(),MainActivity.class);
                             editor.putString("table_link",link);
+                            editor.putString("user_key",userkey);
                             editor.apply();
                             startActivity(i);
                         }
